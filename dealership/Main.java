@@ -10,6 +10,7 @@ public class Main {
 
         nissan.setColor("Jet Black");
         dodge.setColor("Jet Black");
+        nissan2.setParts(new String[] {"tires", "filter"}); 
 
     
         nissan.setPrice(nissan.getPrice() / 2);
