@@ -4,14 +4,26 @@ public class Main {
   
     public static void main(String[] args) {
         Person person = new Person("Elon Musk", "American", "06/28/1971", 5 );
+        
 
         person.setSeatNumber(10);
+        
         
         System.out.println(person.getName());
         System.out.println(person.getNationality());
         System.out.println(person.getDateOfBirth());
         // System.out.println(Arrays.toString(person.passport));
-        System.out.println(person.getSeatNumber());
+        System.out.println(person.getSeatNumber() + "\n");
+
+        Person person2 = new Person(person);
+        person2.setName("Jeff Bezos");
+        person2.setSeatNumber(28);
+        
+        System.out.println(person2.getName());
+        System.out.println(person2.getNationality());
+        System.out.println(person2.getDateOfBirth());
+        // System.out.println(Arrays.toString(person2.passport));
+        System.out.println(person2.getSeatNumber() + "\n");
  
     }
   
