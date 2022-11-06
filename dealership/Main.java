@@ -12,11 +12,16 @@ public class Main {
         dodge.setColor("Jet Black");
         nissan2.setParts(new String[] {"tires", "filter"}); 
 
-    
-        nissan.setPrice(nissan.getPrice() / 2);
-        dodge.setPrice(dodge.getPrice() / 2);
+        Dealership dealership = new Dealership();
 
-        System.out.println(Arrays.toString(nissan2.getParts()));
+        System.out.println(nissan);
+        System.out.println(dodge);
+        System.out.println(nissan2);
+    
+        // nissan.setPrice(nissan.getPrice() / 2);
+        // dodge.setPrice(dodge.getPrice() / 2);
+
+        // System.out.println(Arrays.toString(nissan2.getParts()));
         
         
         // nissan.drive();
