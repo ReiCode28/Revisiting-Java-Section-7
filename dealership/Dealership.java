@@ -3,46 +3,49 @@ import java.util.Arrays;
 public class Dealership {
     private Car[] cars;
 
-    public Dealership(Car[] cars){
+    public Dealership(Car[] cars) {
         this.cars = new Car[cars.length];
         for (int i = 0; i < cars.length; i++) {
             this.cars[i] = new Car(cars[i]);
         }
     }
 
-    //Updates one object at a time and lets the user choose which one.
-    public void setCar(Car car, int index){
+    // Updates one object at a time and lets the user choose which one.
+    public void setCar(Car car, int index) {
         this.cars[index] = new Car(car);
     }
 
-    public Car getCar(int index){
+    public Car getCar(int index) {
         return new Car(this.cars[index]);
     }
-    
-    public void sell(int index){
+
+    public void sell(int index) {
         this.cars[index].drive();
         this.cars[index] = null;
     }
 
-    public String search(String make, int budget){
+    public int search(String make, int budget) {
         for (int i = 0; i < this.cars.length; i++) {
-            if (this.cars[i] == null){
+            if (this.cars[i] == null) {
                 continue;
-            
-            } else if (this.cars[i].getMake().equals(make) && this.cars[i].getPrice() <= budget){
-                return "\nWe found a car in spot " + i + "\n" + this.cars[i].toString() + "\nAre you interested?";
+
+            } else if (this.cars[i].getMake().equalsIgnoreCase(make) && this.cars[i].getPrice() <= budget) {
+                System.out.println("\nWe found a car in spot " + i + "\n\n" + cars[i].toString());
+                System.out.println("If you're interested, type 'yes':");
+                return i;
             }
         }
-        return "Sorry, we couldn't find any cars.";
+        System.out.println("\nYour search didn't match any results.\n");
+        return 404;
     }
 
-    public String toString(){
+    public String toString() {
         String temp = "";
 
         for (int i = 0; i < this.cars.length; i++) {
-            
+
             temp += "Parking Spot: " + i + "\n";
-            if(this.cars[i] == null){
+            if (this.cars[i] == null) {
                 temp += "Empty\n";
             } else {
                 temp += this.cars[i].toString() + "\n";
